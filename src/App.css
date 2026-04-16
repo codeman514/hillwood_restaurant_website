@@ -1,0 +1,15 @@
+.custom-nav-link{
+  color:rgb(48, 90, 215);
+  text-decoration:none;
+}
+.custom-nav-link:hover{
+  color:rgb(39, 210, 70);
+}
+.custom-main-section
+{
+  height:100vh;
+}
+.custom-intro-section
+{
+  height:100vh;
+}
