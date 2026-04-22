@@ -9,20 +9,11 @@ export default function LoginSection() {
     if (!username || !password) {
       alert("請輸入帳戶和密碼");
     }
-    // const response = await axios.post("/api/getUser",{
-    //   username:username,
-    //   password:password
-    // });
-    fetch("/api/getUser", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username: username, password: password }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      });
-    // setContent(response.data.message);
+    const response = await axios.post("/api/getUsers",{
+      username:username,
+      password:password
+    });
+    setContent(response.data.message);
   };
   return (
     <section className="d-flex justify-content-center align-items-center custom-login-section">
