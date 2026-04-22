@@ -1,6 +1,3 @@
-import { neon } from '@neondatabase/serverless';
-export default function handler(req,res)
-{
-    //const sql = neon(process.env.DATABASE_URL);
-    res.status(200).json({message:"Hello World"});
+export default function handler(req, res) {
+  res.status(200).json({ message: "Hello World" });
 }
