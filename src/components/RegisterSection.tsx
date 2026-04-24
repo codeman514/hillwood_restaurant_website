@@ -5,6 +5,7 @@ export default function RegisterSection() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [gender, setGender] = useState("");
+  const [content, setContent] = useState("無");
   const handleSubmit = async (event: React.SubmitEvent) => {
     event.preventDefault();
     try {
@@ -13,7 +14,10 @@ export default function RegisterSection() {
         password,
         gender,
       });
-    } catch (error: any) {}
+      setContent(response.data.message);
+    } catch (error: any) {
+      setContent(error.response.data.message);
+    }
   };
   return (
     <section className="d-flex justify-content-center align-items-center custom-login-section">
@@ -43,7 +47,11 @@ export default function RegisterSection() {
         </div>
         <div className="col-12 d-flex justify-content-around mb-3">
           性別
-          <select className="col-3">
+          <select
+            className="col-3"
+            value={gender}
+            onChange={(event) => setGender(event.target.value)}
+          >
             <option value="">請選擇</option>
             <option value="male">男</option>
             <option value="female">女</option>
@@ -56,6 +64,7 @@ export default function RegisterSection() {
             已有帳戶?去登入
           </Link>
         </div>
+        <div>{content}</div>
       </form>
     </section>
   );
