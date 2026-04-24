@@ -1,24 +1,19 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-export default function LoginSection() {
+export default function RegisterSection() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [content, setContent] = useState("無");
+  const [gender, setGender] = useState("");
   const handleSubmit = async (event: React.SubmitEvent) => {
     event.preventDefault();
-    if (!username || !password) {
-      alert("請輸入帳戶和密碼");
-    }
     try {
-      const response = await axios.post("/api/getUsers", {
+      const response = await axios.post("/api/register", {
         username,
         password,
+        gender,
       });
-      setContent(response.data.message);
-    } catch (error: any) {
-      setContent(error.response.data.message);
-    }
+    } catch (error: any) {}
   };
   return (
     <section className="d-flex justify-content-center align-items-center custom-login-section">
@@ -46,13 +41,21 @@ export default function LoginSection() {
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
+        <div className="col-12 d-flex justify-content-around mb-3">
+          性別
+          <select className="col-3">
+            <option value="">請選擇</option>
+            <option value="male">男</option>
+            <option value="female">女</option>
+            <option value="unknown">不公開</option>
+          </select>
+        </div>
         <div>
-          <button type="submit">登入</button>
-          <Link className="custom-nav-link" to="/register">
-            沒有帳戶?去註冊
+          <button type="submit">註冊</button>
+          <Link className="custom-nav-link" to="/login">
+            已有帳戶?去登入
           </Link>
         </div>
-        <div>{content}</div>
       </form>
     </section>
   );
