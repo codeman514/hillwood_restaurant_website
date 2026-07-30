@@ -25,7 +25,7 @@ export default function IntroSection({
       <div
         className={`d-flex custom-intro-section ${reverse ? "flex-row-reverse" : ""}`}
       >
-        <h1>{content}</h1>
+        {content}
         <img className="col-6" src={imgUrl} />
         <div className="col-6 bg-black text-white mb-0">
           <h1>各式美食</h1>
