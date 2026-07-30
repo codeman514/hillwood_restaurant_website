@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+
 export default function LoginSection() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [content, setContent] = useState("無");
+  const navigate = useNavigate();
   const handleSubmit = async (event: React.SubmitEvent) => {
     event.preventDefault();
     if (!username || !password) {
@@ -16,6 +18,10 @@ export default function LoginSection() {
         password,
       });
       setContent(response.data.message);
+      if(response.data.success)
+      {
+        navigate("/booking");
+      }
     } catch (error: any) {
       setContent(error.response.data.message);
     }

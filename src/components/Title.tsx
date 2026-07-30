@@ -7,6 +7,7 @@ export default function Title() {
                 <ul className="row list-inline mb-0">
                     <li className="col"><Link className="custom-nav-link" to ="/">首頁</Link></li>
                     <li className="col"><Link className="custom-nav-link" to="/menu">菜單</Link></li>
+                    <li className="col"><Link className="custom-nav-link" to="/booking">下單</Link></li>
                     <li className="col"><Link className="custom-nav-link" to="/about">關於我們</Link></li>
                     <li className="col"><Link className="custom-nav-link" to="/login">會員登入</Link></li>
                 </ul>

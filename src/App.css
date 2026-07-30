@@ -1,19 +1,40 @@
-.custom-nav-link{
-  color:rgb(48, 90, 215);
-  text-decoration:none;
+.custom-nav-link {
+  color: rgb(48, 90, 215);
+  text-decoration: none;
 }
-.custom-nav-link:hover{
-  color:rgb(39, 210, 70);
+.custom-nav-link:hover {
+  color: rgb(39, 210, 70);
 }
-.custom-main-section
-{
-  height:100vh;
+.custom-main-section {
+  height: 100vh;
 }
-.custom-intro-section
-{
-  height:100vh;
+.custom-login-section {
+  height: 80vh;
 }
-.custom-login-section
-{
-  height:80vh;
+.custom-main-booking:hover .custom-hover-btn {
+  display: inline-block;
+}
+.custom-hover-btn {
+  display: none;
+}
+.custom-modal-overlay{
+  display:flex;
+  position:fixed;
+  top:0;
+  left:0;
+  background-color: rgba(0,0,0,0.5);
+  width:100%;
+  height:100%;
+  justify-content: center;
+  align-items: center;
+}
+.custom-booking-confirm-modal {
+  background-color:white;
+  width: 50%;
+  height:50%;
+}
+.custom-send-callback-modal {
+  background-color:white;
+  width: 30%;
+  height: 20%;
 }
